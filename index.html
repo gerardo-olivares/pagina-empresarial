@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Orbital Norte Ingeniería: soluciones aeroespaciales, monitoreo con drones y formación tecnológica en México.">
+  <title>Orbital Norte Ingeniería | Tecnología aeroespacial</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header id="encabezado" class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="#encabezado" class="brand">
+        <img src="images/logo.svg" alt="Logotipo de Orbital Norte Ingeniería" class="brand-logo" width="44" height="44">
+        <span class="brand-name">Orbital Norte</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <h1>Orbital Norte Ingeniería S.A. de C.V.</h1>
+      <p class="hero-text">
+        Empresa mexicana del sector aeroespacial dedicada al diseño de pequeños satélites,
+        al monitoreo agrícola y ambiental con drones, y a la formación de talento en ingeniería espacial.
+      </p>
+      <a href="#contacto" class="btn btn-primary">Solicita una cotización</a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- ===== MISIÓN Y VISIÓN ===== -->
+    <section id="nosotros" class="section" aria-labelledby="titulo-nosotros">
+      <h2 id="titulo-nosotros" class="section-title">Quiénes somos</h2>
+      <div class="mv-grid">
+        <article class="mv-card">
+          <h3>Misión</h3>
+          <p>Desarrollar tecnología aeroespacial accesible y confiable que ayude a empresas, gobiernos e
+             instituciones educativas a tomar mejores decisiones a partir de datos tomados desde el aire y el espacio.</p>
+        </article>
+        <article class="mv-card">
+          <h3>Visión</h3>
+          <p>Ser en 2030 la empresa líder en Latinoamérica en soluciones de pequeños satélites y
+             percepción remota, reconocida por su innovación y su compromiso con el talento mexicano.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="section section-alt" aria-labelledby="titulo-proyectos">
+      <h2 id="titulo-proyectos" class="section-title">Proyectos destacados</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <img src="images/satelite.svg" alt="Ilustración de un nanosatélite con paneles solares en órbita sobre la Tierra" class="project-img" width="400" height="240">
+          <div class="project-body">
+            <h3>Nanosatélite AURA-1</h3>
+            <p>CubeSat de 1U para medir la calidad del aire en zonas urbanas, con transmisión de datos a una estación terrena propia.</p>
+            <a href="https://www.nasa.gov/what-are-smallsats-and-cubesats/" class="project-link" target="_blank" rel="noopener noreferrer">
+              Conoce qué es un CubeSat<span class="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/dron.svg" alt="Ilustración de un dron cuadricóptero volando sobre campos de cultivo" class="project-img" width="400" height="240">
+          <div class="project-body">
+            <h3>Agro Vista</h3>
+            <p>Monitoreo de cultivos con drones y cámaras multiespectrales para detectar estrés hídrico y plagas antes de que afecten la cosecha.</p>
+            <a href="https://www.fao.org/digital-agriculture/es/" class="project-link" target="_blank" rel="noopener noreferrer">
+              Agricultura digital según la FAO<span class="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="images/aula.svg" alt="Ilustración de un aula con pizarrón y estudiantes aprendiendo ingeniería" class="project-img" width="400" height="240">
+          <div class="project-body">
+            <h3>Academia Orbital</h3>
+            <p>Talleres prácticos para universidades donde los estudiantes diseñan, integran y prueban su propio satélite educativo.</p>
+            <a href="https://www.gob.mx/aem" class="project-link" target="_blank" rel="noopener noreferrer">
+              Agencia Espacial Mexicana<span class="sr-only"> (se abre en una pestaña nueva)</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="section" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto" class="section-title">Contáctanos</h2>
+      <p class="section-intro">¿Tienes un proyecto en mente? Escríbenos y te respondemos en menos de 48 horas.</p>
+
+      <form id="form-contacto" class="contact-form" action="#" method="post" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required minlength="3" aria-describedby="error-nombre">
+          <p id="error-nombre" class="error-msg" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="error-email">
+          <p id="error-email" class="error-msg" aria-live="polite"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje <span aria-hidden="true">*</span></label>
+          <textarea id="mensaje" name="mensaje" rows="5" required minlength="10" aria-describedby="error-mensaje"></textarea>
+          <p id="error-mensaje" class="error-msg" aria-live="polite"></p>
+        </div>
+
+        <p class="form-note">Los campos marcados con * son obligatorios.</p>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="site-footer">
+    <nav aria-label="Redes sociales">
+      <ul class="social-links">
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">&copy; 2026 Orbital Norte Ingeniería S.A. de C.V. Todos los derechos reservados.</p>
+    <p><a href="#encabezado" class="back-top">Volver arriba &uarr;</a></p>
+  </footer>
+
+  <!-- Validación mínima del formulario -->
+  <script>
+    const form = document.getElementById('form-contacto');
+    const campos = {
+      nombre:  'Escribe tu nombre (mínimo 3 caracteres).',
+      email:   'Escribe un correo válido, por ejemplo: nombre@dominio.com.',
+      mensaje: 'Escribe un mensaje de al menos 10 caracteres.'
+    };
+
+    function validarCampo(id) {
+      const input = document.getElementById(id);
+      const error = document.getElementById('error-' + id);
+      input.value = input.value.trimStart();
+      const valido = input.checkValidity() && input.value.trim() !== '';
+      error.textContent = valido ? '' : campos[id];
+      input.setAttribute('aria-invalid', String(!valido));
+      return valido;
+    }
+
+    Object.keys(campos).forEach(id =>
+      document.getElementById(id).addEventListener('blur', () => validarCampo(id))
+    );
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = document.getElementById('form-status');
+      const resultados = Object.keys(campos).map(validarCampo);
+      if (resultados.every(Boolean)) {
+        status.textContent = '¡Gracias! Tu mensaje fue enviado correctamente.';
+        status.className = 'form-status ok';
+        form.reset();
+        Object.keys(campos).forEach(id => document.getElementById(id).removeAttribute('aria-invalid'));
+      } else {
+        status.textContent = 'Revisa los campos marcados antes de enviar.';
+        status.className = 'form-status fail';
+        document.getElementById(Object.keys(campos)[resultados.indexOf(false)]).focus();
+      }
+    });
+  </script>
+</body>
+</html>

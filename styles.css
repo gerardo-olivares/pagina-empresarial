@@ -1,0 +1,304 @@
+/* =========================================================
+   Orbital Norte Ingeniería — Hoja de estilos
+   Contraste verificado con WCAG AA (mín. 4.5:1 texto normal)
+   ========================================================= */
+
+/* ---------- Variables de diseño ---------- */
+:root {
+  --azul-noche: #0b2545;   /* fondo oscuro  */
+  --azul:       #13315c;   /* texto títulos */
+  --azul-claro: #8da9c4;
+  --crema:      #eef4ed;   /* texto sobre oscuro (14.6:1 vs azul-noche) */
+  --naranja:    #b3550b;   /* botones: 5.0:1 con texto blanco */
+  --naranja-hover: #8f4309;
+  --gris-texto: #2b2f36;   /* 13.4:1 sobre blanco */
+  --fondo-alt:  #f3f6fa;
+  --error:      #b00020;
+  --exito:      #1e6b34;
+  --radio: 0.75rem;
+  --sombra: 0 0.25rem 1rem rgba(11, 37, 69, 0.12);
+  --fuente: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Reset básico ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gris-texto);
+  background-color: #ffffff;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 { line-height: 1.2; margin-top: 0; }
+
+/* ---------- Accesibilidad ---------- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  background: var(--naranja);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio);
+  z-index: 100;
+}
+.skip-link:focus { left: 0.5rem; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #ffb347;
+  outline-offset: 2px;
+}
+
+/* ---------- Encabezado (selector de ID) ---------- */
+#encabezado {
+  background: linear-gradient(135deg, var(--azul-noche) 0%, var(--azul) 100%);
+  color: var(--crema);
+  padding-bottom: 4rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--crema);
+  text-decoration: none;
+}
+.brand-name { font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: var(--crema);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+.nav-links a:hover { border-bottom-color: var(--crema); }
+
+.hero {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 0;
+  text-align: center;
+}
+.hero h1 { font-size: 2.6rem; margin-bottom: 1rem; }
+.hero-text { font-size: 1.15rem; margin-bottom: 2rem; }
+
+/* ---------- Botones (clases reutilizables) ---------- */
+.btn {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn-primary { background-color: var(--naranja); color: #ffffff; }
+.btn-primary:hover { background-color: var(--naranja-hover); transform: translateY(-2px); }
+
+/* ---------- Secciones ---------- */
+.section {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+.section-alt {
+  max-width: none;
+  background-color: var(--fondo-alt);
+}
+.section-alt > * { max-width: 72rem; margin-left: auto; margin-right: auto; }
+
+.section-title {
+  color: var(--azul);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.section-title::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  background: var(--naranja);
+  border-radius: 2px;
+}
+.section-intro { text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; }
+
+/* ---------- Misión / visión ---------- */
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.mv-card {
+  border-left: 5px solid var(--naranja);
+  background: #ffffff;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+}
+.mv-card h3 { color: var(--azul); font-size: 1.35rem; }
+
+/* ---------- Proyectos ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.project-card {
+  background: #ffffff;
+  border: 1px solid #dde3ea;
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover { transform: translateY(-4px); box-shadow: 0 0.5rem 1.5rem rgba(11, 37, 69, 0.18); }
+.project-img { width: 100%; aspect-ratio: 5 / 3; object-fit: cover; }
+.project-body { padding: 1.25rem 1.5rem 1.5rem; display: flex; flex-direction: column; flex: 1; }
+.project-body h3 { color: var(--azul); font-size: 1.25rem; margin-bottom: 0.5rem; }
+.project-body p { flex: 1; }
+.project-link {
+  color: var(--naranja-hover);
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+.project-link:hover { color: var(--azul); }
+
+/* ---------- Formulario de contacto (selector de ID) ---------- */
+#form-contacto {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--fondo-alt);
+  border: 1px solid #dde3ea;
+  border-radius: var(--radio);
+}
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--azul);
+  margin-bottom: 0.35rem;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #6b7785;   /* 4.6:1 contra el fondo: borde visible */
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: var(--gris-texto);
+}
+.form-group textarea { resize: vertical; }
+.form-group input[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] { border-color: var(--error); }
+
+.error-msg { color: var(--error); font-size: 0.9rem; margin: 0.3rem 0 0; min-height: 1.2em; }
+.form-note { font-size: 0.9rem; margin-top: 0; }
+.form-status { font-weight: 700; margin: 1rem 0 0; }
+.form-status.ok { color: var(--exito); }
+.form-status.fail { color: var(--error); }
+
+/* ---------- Pie de página ---------- */
+.site-footer {
+  background-color: var(--azul-noche);
+  color: var(--crema);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+.social-links a {
+  display: inline-block;
+  color: var(--crema);
+  text-decoration: none;
+  border: 1px solid var(--azul-claro);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  transition: background-color 0.2s, color 0.2s;
+}
+.social-links a:hover { background-color: var(--crema); color: var(--azul-noche); }
+.copyright { font-size: 0.9rem; margin: 0.5rem 0; }
+.back-top { color: var(--crema); font-size: 0.9rem; }
+
+/* =========================================================
+   DISEÑO RESPONSIVO (media queries)
+   ========================================================= */
+
+/* Tablets */
+@media (max-width: 960px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 2.2rem; }
+}
+
+/* Móviles */
+@media (max-width: 640px) {
+  .navbar { flex-direction: column; gap: 0.75rem; }
+  .nav-links { gap: 1rem; }
+  .hero { padding-top: 1.5rem; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero-text { font-size: 1rem; }
+  .section { padding: 3rem 1rem; }
+  .section-title { font-size: 1.6rem; }
+  .mv-grid,
+  .projects-grid { grid-template-columns: 1fr; }
+  #form-contacto { padding: 1.25rem; }
+  .btn { width: 100%; text-align: center; }
+}
+
+/* Usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
